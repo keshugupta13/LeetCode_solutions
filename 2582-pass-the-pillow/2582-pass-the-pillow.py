@@ -1,15 +1,21 @@
 class Solution(object):
     def passThePillow(self, n, time):
-        rounds = time // (n-1)
-        remainder = time % (n-1)
-        ans = 0
-        if rounds%2==0:
-            ans = 1 + remainder
-        else:
-            ans = n - remainder
+        i = 1
+        F = True
+        while (time>0):
+            if(F==True):
+                i += 1
+                time -= 1
 
-        return ans
+                if (i == n):
+                    F = False
+            else:
+                i -= 1
+                time -= 1
 
+                if (i==1):
+                    F = True
+        return i
 
         """
         :type n: int
