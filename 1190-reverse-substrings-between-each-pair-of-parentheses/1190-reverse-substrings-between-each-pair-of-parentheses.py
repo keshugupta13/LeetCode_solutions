@@ -14,6 +14,6 @@ class Solution(object):
                 for char in rev:
                     stack.append(char)
         
-        return ''.join(stack)
+        return "".join(stack)
 
         
