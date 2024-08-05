@@ -9,11 +9,11 @@ class Solution(object):
         nums = []
         for i in arr:
             if mapping[i] == 1:
-                nums.append(i)
-        if k-1 < len(nums):
-            return nums[k-1]
-        else:
-            return ""
+                k -= 1
+            if k == 0:
+                return i
+            
+        return ""
 
 
         """
