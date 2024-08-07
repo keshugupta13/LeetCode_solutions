@@ -4,15 +4,15 @@ class Solution(object):
         arr = []
         
         for i in range(n):
-            prefix = 0
+            sum1 = 0
             for j in range(i,n):
-                prefix += nums[j]
-                arr.append(prefix)
+                sum1 += nums[j]
+                arr.append(sum1)
             
         arr.sort()
 
-        sum1 = sum(arr[left-1:right])
-        return sum1 % MOD
+        sum2 = sum(arr[left-1:right])
+        return sum2 % MOD
          
 
         
