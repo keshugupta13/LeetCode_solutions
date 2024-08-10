@@ -55,10 +55,9 @@ class Solution(object):
 
         for i in range(row-2):
             for j in range(col-2):
-                for x in range(3):
                     submatrix = [matrix[i][j:j+3], matrix[i+1][j:j+3], matrix[i+2][j:j+3]]
-                if self.valid(submatrix):
-                    count += 1
+                    if self.valid(submatrix):
+                        count += 1
         return count
 
 
