@@ -17,8 +17,9 @@ class Solution(object):
         temp.next = head
         k = k % count
         
+        steps = count - k
         temp = head
-        for i in range(k):
+        for i in range(steps - 1):
             temp = temp.next
             
         head = temp.next
