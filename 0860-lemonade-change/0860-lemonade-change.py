@@ -1,32 +1,25 @@
 class Solution(object):
     def lemonadeChange(self, bills):
-        if bills[0] != 5:
-            return False
-        
-        five_dollers = 0
-        ten_dollers = 0
+        d = {}
+        d[5] = 0
+        d[10] = 0
+        d[20] = 0
+        for b in bills:
+            if b == 5:
+                d[b] += 1
+            elif b == 10:
+                if d[5] == 0:
+                    return False
+                d[10] += 1
+                d[5] -= 1
+            elif b == 20:
+                if d[10] > 0 and d[5] > 0:
+                    d[10] -= 1
+                    d[5] -= 1
+                elif d[5] >= 3:
+                    d[5] -= 3
+                else:
+                    return False
 
-        for x in bills:
-            if x == 5:
-                five_dollers += 1
-            elif x == 10:
-                if five_dollers > 0:
-                    five_dollers -= 1
-                else:
-                    return False
-                ten_dollers += 1
-            else:
-                if five_dollers > 0 and ten_dollers > 0:
-                    five_dollers -= 1
-                    ten_dollers -= 1
-                elif five_dollers > 2 :
-                    five_dollers -= 3
-                else:
-                    return False
-            print(five_dollers, ten_dollers)
         return True
-        """
-        :type bills: List[int]
-        :rtype: bool
-        """
         
