@@ -3,6 +3,8 @@ class Solution(object):
         def decimal_to_binary(num):
             if num == 0:
                 return "0"
+            if num == 1:
+                return "1"
             binary = ""
             while num > 0:
                 rem = num % 2
