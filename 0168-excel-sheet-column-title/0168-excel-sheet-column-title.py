@@ -1,14 +1,14 @@
 class Solution(object):
     def convertToTitle(self, n):
-        string = ""
+        string=""
         while n > 0:
-            remainder = n % 26
-            if remainder == 0:
+            rem = n % 26
+            if rem == 0:
                 string = 'Z' + string
-                n = n // 26 - 1  
+                n = n // 26 - 1
             else:
-                string = chr(64 + remainder) + string
-                n = n // 26
-        return string
+                string = chr(64 + rem) + string
+                n = n // 26 
 
+        return string
         
