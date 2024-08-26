@@ -2,7 +2,8 @@ class Solution(object):
     def valid(self,matrix):
         visited = {}
         expected_sum = 0
-
+        
+        # row addition
         for i in range(3):
             row_sum = 0
             for j in range(3):
@@ -19,21 +20,22 @@ class Solution(object):
             else:
                 if expected_sum != row_sum:
                     return False
-                
-            
- 
+        
+        # column addition
         for  j in range(3):
             col_sum = 0
             for i in range(3):
                 num =  matrix[i][j]
-                col_sum += num
+                if  num in visited:
+                    col_sum += num
 
             if j == 0:
                 expected_sum = col_sum
             else:
                 if expected_sum != col_sum:
                     return False
-            
+
+        # diagonal   
         diag1_sum = 0
         diag2_sum = 0
         for i in range(3):
