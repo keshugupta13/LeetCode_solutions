@@ -5,12 +5,9 @@ class Solution(object):
         for i in s:
             str1 += str(ord(i)-ord('a')+1)
 
-        while k > 0:
-            temp = 0
-            for x in str1:
-                temp += int(x)
-            str1 = str(temp)
-            k -= 1
+        for i in range(k):
+            count=0
+            for j in range(len(str1)):
+                count+=int(str1[j]) 
+            str1 = str(count)    
         return int(str1)
-            
-
