@@ -19,18 +19,18 @@ class Solution(object):
                     return 0
                 
                 if i=="]":
-                    if stack[len(stack)-1]=="[":
+                    if stack[-1]=="[":
                         stack.pop()
                     else:
                         return 0
                         
                 elif i=="}":
-                    if stack[len(stack)-1]=="{":
+                    if stack[-1]=="{":
                         stack.pop()
                     else:
                         return 0
                 else:
-                    if stack[len(stack)-1]=="(":
+                    if stack[-1]=="(":
                         stack.pop()
                     else:
                         return 0
