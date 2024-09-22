@@ -3,8 +3,9 @@ class Solution(object):
         nums.sort()
         unique_triplets = set()
         result = []
-        for i in range(len(nums)-2):
-            left, right = i + 1 , len(nums) - 1
+        n = len(nums)
+        for i in range(n-2):
+            left, right = i + 1 , n - 1
             while left < right:
                 sum = nums[i] + nums[left] + nums[right]
                 if sum == 0:
