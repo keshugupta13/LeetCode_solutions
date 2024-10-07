@@ -9,9 +9,3 @@ class Solution(object):
             else:
                 stack.append(ch)
         return len(stack)
-
-        """
-        :type s: str
-        :rtype: int
-        """
-        
